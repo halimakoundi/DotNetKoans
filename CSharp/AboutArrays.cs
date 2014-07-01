@@ -69,18 +69,6 @@ namespace DotNetKoans.CSharp
         }
 
         [Koan(5)]
-        public void PushingAndPopping()
-        {
-            var array = new[] { 1, 2 };
-            Stack stack = new Stack(array);
-            stack.Push("last");
-            Assert.Equal(FILL_ME_IN, stack.ToArray());
-            var poppedValue = stack.Pop();
-            Assert.Equal(FILL_ME_IN, poppedValue);
-            Assert.Equal(FILL_ME_IN, stack.ToArray());
-        }
-
-        [Koan(6)]
         public void Shifting()
         {
             //Shift == Remove First Element

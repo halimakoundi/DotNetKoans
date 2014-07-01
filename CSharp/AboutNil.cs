@@ -38,6 +38,7 @@ namespace DotNetKoans.CSharp
             Assert.True(obj == FILL_ME_IN);
         }
 
+#pragma warning disable 219
         [Koan(4)]
         public void ABetterWayToCheckThatAnObjectIsNull()
         {

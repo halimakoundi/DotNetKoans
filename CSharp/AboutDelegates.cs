@@ -29,33 +29,26 @@ namespace DotNetKoans.CSharp
 			}
 		}
 		[Koan(1)]
-		public void DelegatesAreReferenceTypes()
-		{
-			//If you don't initialize a delegate it will be a null value, just as any other refrence type.
-			BinaryOp op;
-			Assert.Null(FILL_ME_IN);
-		}
-		[Koan(2)]
 		public void DelegatesCanBeInstantiated()
 		{
 			MyMath math = new MyMath();
 			BinaryOp op = new BinaryOp(math.Add);
 			Assert.Equal(FILL_ME_IN, op.Method.Name);
 		}
-		[Koan(3)]
+		[Koan(2)]
 		public void DelegatesCanBeAssigned()
 		{
 			MyMath math = new MyMath();
 			BinaryOp op = math.Add;
 			Assert.Equal(FILL_ME_IN, op.Method.Name);
 		}
-		[Koan(4)]
+		[Koan(3)]
 		public void DelegatesCanReferenceStaticMethods()
 		{
 			BinaryOp op = MyMath.Subtract;
 			Assert.Equal(FILL_ME_IN, op.Method.Name);
 		}
-		[Koan(5)]
+		[Koan(4)]
 		public void MethodsCalledViaDelegate()
 		{
 			MyMath math = new MyMath();
@@ -66,20 +59,20 @@ namespace DotNetKoans.CSharp
 		{
             Assert.Equal(FILL_ME_IN, passed(3,3));
         }
-		[Koan(6)]
+		[Koan(5)]
 		public void DelegatesCanBePassed()
 		{
 			MyMath math = new MyMath();
 			BinaryOp op = math.Add;
 			PassMeTheDelegate(op);
 		}
-		[Koan(7)]
+		[Koan(6)]
 		public void MethodCanBePassedDirectly()
 		{
 			MyMath math = new MyMath();
 			PassMeTheDelegate(math.Add);
 		}
-		[Koan(8)]
+		[Koan(7)]
 		public void DelegatesAreImmutable()
 		{
 			//Like strings it looks like you can change what a delegate references, but really they are immutable objects
@@ -103,7 +96,7 @@ namespace DotNetKoans.CSharp
 				return x + 10;
 			}
 		}
-		[Koan(9)]
+		[Koan(8)]
 		public void DelegatesHaveAnInvocationList()
 		{
 			FunctionalTricks f = new FunctionalTricks();
@@ -114,7 +107,7 @@ namespace DotNetKoans.CSharp
 			adding += f.Add10;
 			Assert.Equal(FILL_ME_IN, adding.GetInvocationList().Length);
 		}
-		[Koan(10)]
+		[Koan(9)]
 		public void OnlyLastResultReturned()
 		{
 			FunctionalTricks f = new FunctionalTricks();
@@ -123,7 +116,7 @@ namespace DotNetKoans.CSharp
 			//Delegates may have more than one method attached, but only the result of the last method is returned.
 			Assert.Equal(FILL_ME_IN, adding(5));
 		}
-		[Koan(11)]
+		[Koan(10)]
 		public void RemovingMethods()
 		{
 			FunctionalTricks f = new FunctionalTricks();
@@ -148,7 +141,7 @@ namespace DotNetKoans.CSharp
 			int y = int.Parse(s);
 			Assert.Equal(42, x + y);
 		}
-		[Koan(12)]
+		[Koan(11)]
 		public void BuiltInActionDelegateTakesInt()
 		{
 			//With the release of generics in .Net 2.0 we got some delegates which will cover most of our needs. 
@@ -159,14 +152,14 @@ namespace DotNetKoans.CSharp
 			Action<int> i = AssertIntEqualsFourtyTwo;
 			i((int)FILL_ME_IN);
 		}
-		[Koan(13)]
+		[Koan(12)]
 		public void BuiltInActionDelegateTakesString()
 		{
 			// Because the delegate is a template, it also works with any other type. 
 			Action<string> s = AssertStringEqualsFourtyTwo;
 			s((string)FILL_ME_IN);
 		}
-		[Koan(14)]
+		[Koan(13)]
 		public void BuiltInActionDelegateIsOverloaded()
 		{
 			//Action is an overloaded delegate so it can take more than one paramter
@@ -185,10 +178,12 @@ namespace DotNetKoans.CSharp
 				_letters.Append(letter);
 			}
 		}
-		[Koan(15)]
+		[Koan(14)]
 		public void ActionInTheBcl()
 		{
-			//You will find Action used within the BCL, often when iterating over a container
+			//You will find Action used within the Base Class Library, often when iterating over a container.
+            // E.g. the second argument of Array.ForEach is Action<T>, for which we can use any method that takes a T.
+            // In this example we have a Array<char>, so we need a Action<char>, to which we can assign a 
 			string greeting = "Hello world";
 			Seen s = new Seen();
 
@@ -205,7 +200,7 @@ namespace DotNetKoans.CSharp
 		{
 			return "42" == s;
 		}
-		[Koan(16)]
+		[Koan(15)]
 		public void BuiltInPredicateDelegateIntSatisfied()
 		{
 			//The Predicate<T> delegate 
@@ -216,14 +211,14 @@ namespace DotNetKoans.CSharp
 			Predicate<int> i = (Predicate<int>)FILL_ME_IN;
 			Assert.True(i(42));
 		}
-		[Koan(17)]
+		[Koan(16)]
 		public void BuiltInPredicateDelegateStringSatisfied()
 		{
 			//Because it is a template, you can work with any type
 			Predicate<string> s = (Predicate<string>)FILL_ME_IN;
 			Assert.True(s("42"));
 
-			//Predicate is not overloaded, so unlike Action<> you cannot do this...
+			//Predicate can have only one argument, so unlike Action<> you cannot do this...
 			//Predicate<int, string> a = (Predicate<int, string>)FILL_ME_IN;
 			//Assert.True(a(42, "42"));
 		}
@@ -232,7 +227,7 @@ namespace DotNetKoans.CSharp
 		{
 			return country.StartsWith("S");
 		}
-		[Koan(18)]
+		[Koan(17)]
 		public void FindingWithPredicate()
 		{
 			//Predicate can be used to find an element in an array
@@ -246,7 +241,7 @@ namespace DotNetKoans.CSharp
 			var countries = new[] { "Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "French Guiana", "Guyana", "Paraguay", "Peru", "Suriname", "Uruguay", "Venezuela" };
 			return countries.Contains(country);
 		}
-		[Koan(19)]
+		[Koan(18)]
 		public void ValidationWithPredicate()
 		{
 			//Predicate can also be used when verifying 
@@ -263,7 +258,7 @@ namespace DotNetKoans.CSharp
 		{
 			return x + y;
 		}
-		[Koan(20)]
+		[Koan(19)]
 		public void FuncWithNoParameters()
 		{
 			//The Func<> delegate 
@@ -276,7 +271,7 @@ namespace DotNetKoans.CSharp
 			Func<string> d = FirstMonth;
 			Assert.Equal(FILL_ME_IN, d());
 		}
-		[Koan(21)]
+		[Koan(20)]
 		public void FunctionReturnsInt()
 		{
 			//Like Action<>, Func<> is overloaded and can take a variable number of parameters.
@@ -302,7 +297,7 @@ namespace DotNetKoans.CSharp
 		{
 			return lhs.Model.CompareTo(rhs.Model);
 		}
-		[Koan(22)]
+		[Koan(21)]
 		public void SortingWithComparison()
 		{
 			//You could make classes sortable by implementing IComparable or IComparer. But the Comparison<> delegate makes it easier
@@ -319,11 +314,11 @@ namespace DotNetKoans.CSharp
 		{
 			return x.ToString();
 		}
-		[Koan(23)]
+		[Koan(22)]
 		public void ChangingTypesWithConverter()
 		{
 			//The Converter<> delegate
-			//	public delegeate U Converter<T, U>(T from);
+			//	public delegate U Converter<T, U>(T from);
 			//Can be used to change an object from one type to another
 			var numbers = new[] { 1, 2, 3, 4 };
 			Converter<int, string> c = Stringify;

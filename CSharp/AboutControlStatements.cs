@@ -6,6 +6,7 @@ namespace DotNetKoans.CSharp
 {
     public class AboutControlStatements : Koan
     {
+#pragma warning disable 162
         [Koan(1)]
         public void IfThenElseStatementsWithBrackets()
         {
@@ -80,6 +81,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, (false ? 1 : 0));
         }
 
+#pragma warning disable 219
         //This is out of place for control statements, but necessary for Koan 8
         [Koan(7)]
         public void NullableTypes()
@@ -102,6 +104,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, x);
         }
 
+#pragma warning disable 184
         [Koan(9)]
         public void IsOperators()
         {
