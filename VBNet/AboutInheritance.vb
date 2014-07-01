@@ -5,8 +5,8 @@ Public Class AboutInheritance
     Public Class Dog
         Public Property Name() As String
 
-        Public Sub New(ByVal name As String)
-            name = name
+        Public Sub New(ByVal name_ As String)
+            Name = name_
         End Sub
 
         ' For a method/function to be overidden by sub-classes, it must be virtual.

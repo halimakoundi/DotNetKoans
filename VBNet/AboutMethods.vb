@@ -42,7 +42,7 @@ Public Class AboutMethods
         Assert.Equal(FILL_ME_IN, Me.LocalMethodWithVariableParameters("Cory", "Will", "Corey"))
     End Sub
 
-    'Note how we called the method by saying "this.LocalMethodWithVariableParameters"
+    'Note how we called the method by saying "Me.LocalMethodWithVariableParameters"
     'That isn't necessary for local methods
     <Koan(6)> _
     Public Sub LocalMethodsWithoutExplicitReceiver()

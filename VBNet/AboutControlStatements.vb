@@ -61,6 +61,7 @@ Public Class AboutControlStatements
         Assert.Null(FILL_ME_IN)
     End Sub
 
+    'The If function with two arguments returns the first argument if it is not Nothing, otherwise the second argument
     <Koan(8)> _
     Public Sub AssignIfNullOperator()
         Dim nullableInt As Integer? = Nothing
@@ -69,6 +70,23 @@ Public Class AboutControlStatements
     End Sub
 
     <Koan(9)> _
+    Public Sub AssignIfNullOperatorWhenNotNull()
+        Dim nullableInt As Integer? = Nothing
+        nullableInt = 7
+        Dim x As Integer = If(nullableInt, 42)
+        Assert.Equal(FILL_ME_IN, x)
+    End Sub
+
+    'Note that this is very different from the If function with three arguments,
+    'which returns the third argument if the first argument is Nothing (or False), otherwise the second argument
+    <Koan(10)> _
+    Public Sub TernaryOperatorWithNullable()
+        Dim nullableInt As Integer? = Nothing
+        Dim x As Integer = If(nullableInt, 42, 45)
+        Assert.Equal(FILL_ME_IN, x)
+    End Sub
+
+    <Koan(11)> _
     Public Sub IsOperators()
         Dim isKoan As Boolean = False
         Dim isAboutControlStatements As Boolean = False
@@ -92,7 +110,7 @@ Public Class AboutControlStatements
         Assert.Equal(FILL_ME_IN, isAboutMethods)
     End Sub
 
-    <Koan(10)> _
+    <Koan(12)> _
     Public Sub WhileStatement()
         Dim i As Integer = 1
         Dim result As Integer = 1
@@ -103,8 +121,8 @@ Public Class AboutControlStatements
         Assert.Equal(FILL_ME_IN, result)
     End Sub
 
-    <Koan(11)> _
-    Public Sub BreakStatement()
+    <Koan(13)> _
+    Public Sub ExitStatement()
         Dim i As Integer = 1
         Dim result As Integer = 1
         While True
@@ -117,7 +135,7 @@ Public Class AboutControlStatements
         Assert.Equal(FILL_ME_IN, result)
     End Sub
 
-    <Koan(12)> _
+    <Koan(14)> _
     Public Sub ContinueStatement()
         Dim i As Integer = 0
         Dim result = New List(Of Integer)()
@@ -131,29 +149,29 @@ Public Class AboutControlStatements
         Assert.Equal(FILL_ME_IN, result)
     End Sub
 
-    <Koan(13)> _
+    <Koan(15)> _
     Public Sub ForStatement()
         Dim list = New List(Of String)({"fish", "and", "chips"})
         Dim i As Integer = 0
-        While i < List.Count
-            List(i) = (List(i).ToUpper())
+        While i < list.Count
+            list(i) = (list(i).ToUpper())
             i += 1
         End While
-        Assert.Equal(FILL_ME_IN, List)
+        Assert.Equal(FILL_ME_IN, list)
     End Sub
 
-    <Koan(14)> _
+    <Koan(16)> _
     Public Sub ForEachStatement()
         Dim list = New List(Of String)({"fish", "and", "chips"})
         Dim finalList = New List(Of String)()
-        For Each item As String In List
+        For Each item As String In list
             finalList.Add(item.ToUpper())
         Next
-        Assert.Equal(FILL_ME_IN, List)
+        Assert.Equal(FILL_ME_IN, list)
         Assert.Equal(FILL_ME_IN, finalList)
     End Sub
 
-    <Koan(15)> _
+    <Koan(17)> _
     Public Sub ModifyingACollectionDuringForEach()
         Dim list = New List(Of String)({"fish", "and", "chips"})
         Try
@@ -165,7 +183,7 @@ Public Class AboutControlStatements
         End Try
     End Sub
 
-    <Koan(16)> _
+    <Koan(18)> _
     Public Sub CatchingModificationExceptions()
         Dim whoCaughtTheException As String = "No one"
         Dim list = New List(Of String)({"fish", "and", "chips"})

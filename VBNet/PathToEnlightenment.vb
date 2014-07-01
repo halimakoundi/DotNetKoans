@@ -5,7 +5,6 @@
             Return New String() {"DotNetKoans.VBNet.AboutAsserts",
                                  "DotNetKoans.VBNet.AboutNothing",
                                  "DotNetKoans.VBNet.AboutArrays",
-                                 "DotNetKoans.VBNet.AboutArrayAssignment",
                                  "DotNetKoans.VBNet.AboutHashes",
                                  "DotNetKoans.VBNet.AboutStrings",
                                  "DotNetKoans.VBNet.AboutInheritance",
