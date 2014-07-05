@@ -166,8 +166,9 @@ namespace DotNetKoans.KoanRunner
                     Exception ie = e.InnerException;
                     string st = ie.StackTrace;
                     string[] stLines = st.Split(new char[] { '\n' });
-                    foreach (string line in stLines)
-                        Console.WriteLine(line);
+                    // uncomment if there are problems parsing the stack trace:
+                    /*foreach (string line in stLines)
+                        Console.WriteLine(line);*/
                     string filenameAndLine = "";
                     foreach (string s in stLines)
                     {

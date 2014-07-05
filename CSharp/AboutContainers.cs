@@ -1,11 +1,11 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Xunit;
-using System.Collections;
 
 namespace DotNetKoans.CSharp
 {
-	public class AboutGenericContainers : Koan
+	public class AboutContainers : Koan
 	{
 		[Koan(1)]
 		public void ArrayListSizeIsDynamic()
@@ -118,7 +118,9 @@ namespace DotNetKoans.CSharp
 		public void RandomAccess()
 		{
 			//Just as with array, you can use the subscript notation to access any element in a list.
-			List<int> list = new List<int> { 5, 6, 7 };
+            // No casting is needed with generic containers, because the compiler knows it can only have one type,
+            // in this case int:
+            List<int> list = new List<int> { 5, 6, 7 };
 			Assert.Equal(FILL_ME_IN, list[2]);
 		}
 		[Koan(11)]
@@ -158,7 +160,6 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, list.ToArray());
         }
 
-
         [Koan(16)]
         public void OldStack()
         {
@@ -190,32 +191,51 @@ namespace DotNetKoans.CSharp
 		[Koan(18)]
 		public void StackOrder()
 		{
+            // Stack is a first in, last out container (FILO).
 			var stack = new Stack<int>();
 			stack.Push(1);
 			stack.Push(2);
 			stack.Push(3);
 
-			Assert.Equal(FILL_ME_IN, stack.ToArray());
-		}
-		[Koan(19)]
-		public void PeekingIntoAQueue()
-		{
-			Queue<string> queue = new Queue<string>();
-			queue.Enqueue("one");
-			Assert.Equal(FILL_ME_IN, queue.Peek());
-			queue.Enqueue("two");
-			Assert.Equal(FILL_ME_IN, queue.Peek());
-		}
+			Assert.Equal(FILL_ME_IN, stack.Pop());
+            Assert.Equal(FILL_ME_IN, stack.Pop());
+            Assert.Equal(FILL_ME_IN, stack.Pop());
+            Assert.Equal(FILL_ME_IN, stack.Count);
+        }
+        [Koan(19)]
+        public void PeekingIntoAStack()
+        {
+            // You can peek at the element that was last added, without removing it as Pop would do.
+            var stack = new Stack<int>();
+            stack.Push(1);
+            stack.Push(2);
+            Assert.Equal(FILL_ME_IN, stack.Peek());
+            Assert.Equal(FILL_ME_IN, stack.Count);
+        }
 		[Koan(20)]
-		public void RemovingItemsFromTheQueue()
+		public void Queue()
 		{
+            // A Queue is a first in first out container (FIFO).
 			Queue<string> queue = new Queue<string>();
 			queue.Enqueue("one");
 			queue.Enqueue("two");
+            queue.Enqueue("three");
+
 			Assert.Equal(FILL_ME_IN, queue.Dequeue());
-			Assert.Equal(FILL_ME_IN, queue.Count);
+            Assert.Equal(FILL_ME_IN, queue.Dequeue());
+            Assert.Equal(FILL_ME_IN, queue.Dequeue());
+            Assert.Equal(FILL_ME_IN, queue.Count);
 		}
-		[Koan(21)]
+        [Koan(21)]
+        public void PeekingIntoAQueue()
+        {
+            // Peek allows you to see which element Dequeue would return, but without removing it.
+            Queue<string> queue = new Queue<string>();
+            queue.Enqueue("one");
+            queue.Enqueue("two");
+            Assert.Equal(FILL_ME_IN, queue.Peek());
+        }
+        [Koan(22)]
 		public void AddingToADictionary()
 		{
 			//Dictionary<TKey, TValue> is .Net's key value store. The key and the value do not need to be the same types.
@@ -224,7 +244,7 @@ namespace DotNetKoans.CSharp
 			dictionary[1] = "one";
 			Assert.Equal(FILL_ME_IN, dictionary.Count);
 		}
-		[Koan(22)]
+		[Koan(23)]
 		public void AccessingData()
 		{
 			Dictionary<string,string> dictionary = new Dictionary<string,string>();
@@ -234,14 +254,14 @@ namespace DotNetKoans.CSharp
 			Assert.Equal(FILL_ME_IN, dictionary["one"]);
 			Assert.Equal(FILL_ME_IN, dictionary["two"]);
 		}
-		[Koan(23)]
+		[Koan(24)]
 		public void AccessingDataNotAdded()
 		{
 			Dictionary<string, string> dictionary = new Dictionary<string, string>();
 			dictionary["one"] = "uno";
 			Assert.Throws(typeof(FillMeIn), delegate() { string s = dictionary["two"]; });
 		}
-		[Koan(24)]
+		[Koan(25)]
 		public void CatchingMissingData()
 		{
 			//To deal with the throw when data is not there, you could wrap the data access in a try/catch block...
@@ -258,7 +278,7 @@ namespace DotNetKoans.CSharp
 			}
 			Assert.Equal(FILL_ME_IN, result);
 		}
-		[Koan(25)]
+		[Koan(26)]
 		public void PreCheckForMissingData()
 		{
 			Dictionary<string, string> dictionary = new Dictionary<string, string>();
@@ -274,7 +294,7 @@ namespace DotNetKoans.CSharp
 			}
 			Assert.Equal(FILL_ME_IN, result);
 		}
-		[Koan(26)]
+		[Koan(27)]
 		public void TryGetValueForMissingData()
 		{
 			Dictionary<string, string> dictionary = new Dictionary<string, string>();
@@ -286,7 +306,7 @@ namespace DotNetKoans.CSharp
 			}
 			Assert.Equal(FILL_ME_IN, result);
 		}
-		[Koan(27)]
+		[Koan(28)]
 		public void InitializingADictionary()
 		{
 			//Although it is not common, you can initialize a dictionary...
@@ -294,7 +314,7 @@ namespace DotNetKoans.CSharp
 			Assert.Equal(FILL_ME_IN, dictionary["one"]);
 			Assert.Equal(FILL_ME_IN, dictionary["two"]);
 		}
-		[Koan(28)]
+		[Koan(29)]
 		public void ModifyingData()
 		{
 			Dictionary<string, string> dictionary = new Dictionary<string, string>();
@@ -303,7 +323,7 @@ namespace DotNetKoans.CSharp
 			dictionary["one"] = "ein";
 			Assert.Equal(FILL_ME_IN, dictionary["one"]);
 		}
-		[Koan(29)]
+		[Koan(30)]
 		public void KeyExists()
 		{
 			Dictionary<string, string> dictionary = new Dictionary<string, string>();
@@ -311,7 +331,7 @@ namespace DotNetKoans.CSharp
 			Assert.Equal(FILL_ME_IN, dictionary.ContainsKey("one"));
 			Assert.Equal(FILL_ME_IN, dictionary.ContainsKey("two"));
 		}
-		[Koan(30)]
+		[Koan(31)]
 		public void ValueExists()
 		{
 			Dictionary<string, string> dictionary = new Dictionary<string, string>();
@@ -319,7 +339,7 @@ namespace DotNetKoans.CSharp
 			Assert.Equal(FILL_ME_IN, dictionary.ContainsValue("uno"));
 			Assert.Equal(FILL_ME_IN, dictionary.ContainsValue("dos"));
 		}
-		[Koan(31)]
+		[Koan(32)]
 		public void f()
 		{
 			Dictionary<string, int> one = new Dictionary<string, int>();
