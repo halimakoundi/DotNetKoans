@@ -63,6 +63,7 @@
     <Compile Include="AboutMethods.cs" />
     <Compile Include="AboutNil.cs" />
     <Compile Include="AboutStrings.cs" />
+    <Compile Include="AboutUsing.cs" />
     <Compile Include="PathToEnlightenment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

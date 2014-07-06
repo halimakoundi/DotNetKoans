@@ -16,7 +16,8 @@
 				"DotNetKoans.CSharp.AboutControlStatements",
 				"DotNetKoans.CSharp.AboutContainers",
 				"DotNetKoans.CSharp.AboutDelegates",
-				"DotNetKoans.CSharp.AboutLambdas"
+				"DotNetKoans.CSharp.AboutLambdas",
+                "DotNetKoans.CSharp.AboutUsing"
                 };
             }
         }

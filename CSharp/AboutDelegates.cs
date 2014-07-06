@@ -123,7 +123,7 @@ namespace DotNetKoans.CSharp
 			Curry adding = f.Add5;
 			adding += f.Add10;
 			Assert.Equal(2, adding.GetInvocationList().Length);
-			//Remove Add5 from the invocation list
+			//Remove Add5 from the invocation list using -=
 			Assert.Equal(1, adding.GetInvocationList().Length);
 			Assert.Equal("Add10", adding.Method.Name);
 		}

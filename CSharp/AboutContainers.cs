@@ -168,9 +168,6 @@ namespace DotNetKoans.CSharp
             Stack stack = new Stack(array);
             stack.Push("last");
             Assert.Equal(FILL_ME_IN, stack.ToArray());
-            var poppedValue = stack.Pop();
-            Assert.Equal(FILL_ME_IN, poppedValue);
-            Assert.Equal(FILL_ME_IN, stack.ToArray());
         }
 
         [Koan(17)]
