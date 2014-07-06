@@ -9,7 +9,9 @@
                                  "DotNetKoans.VBNet.AboutStrings",
                                  "DotNetKoans.VBNet.AboutInheritance",
                                  "DotNetKoans.VBNet.AboutMethods",
-                                 "DotNetKoans.VBNet.AboutControlStatements"}
+                                 "DotNetKoans.VBNet.AboutControlStatements",
+                                 "DotNetKoans.VBNet.AboutUsing"
+                                }
         End Get
     End Property
 End Class

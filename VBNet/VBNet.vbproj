@@ -23,7 +23,7 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>VBNet.xml</DocumentationFile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42030,42032,42036,42104,42108,42109</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -63,10 +63,14 @@
     <Compile Include="AboutAsserts.vb" />
     <Compile Include="AboutContainers.vb" />
     <Compile Include="AboutControlStatements.vb" />
+    <Compile Include="AboutDelegates.vb" />
+    <Compile Include="AboutHashes.vb" />
     <Compile Include="AboutInheritance.vb" />
+    <Compile Include="AboutLambdas.vb" />
     <Compile Include="AboutMethods.vb" />
     <Compile Include="AboutNothing.vb" />
     <Compile Include="AboutStrings.vb" />
+    <Compile Include="AboutUsing.vb" />
     <Compile Include="ExtensionMethods.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
