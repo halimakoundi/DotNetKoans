@@ -6,7 +6,7 @@ Public Class AboutMethods
     'without having to recompile. You only have to reference the
     'namespace the methods are in to use them. Here, since both the
     'ExtensionMethods class and the AboutMethods class are in the
-    'DotNetKoans.CSharp namespace, AboutMethods can automatically
+    'DotNetKoans.VBNet namespace, AboutMethods can automatically
     'find them
     <Koan(1)> _
     Public Sub ExtensionMethodsShowUpInTheCurrentClass()

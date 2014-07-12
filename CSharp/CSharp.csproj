@@ -55,13 +55,15 @@
   <ItemGroup>
     <Compile Include="AboutArrays.cs" />
     <Compile Include="AboutAsserts.cs" />
+    <Compile Include="AboutClassesAndStructs.cs" />
     <Compile Include="AboutControlStatements.cs" />
     <Compile Include="AboutDelegates.cs" />
     <Compile Include="AboutContainers.cs" />
+    <Compile Include="AboutProperties.cs" />
     <Compile Include="AboutInheritance.cs" />
     <Compile Include="AboutLambdas.cs" />
     <Compile Include="AboutMethods.cs" />
-    <Compile Include="AboutNil.cs" />
+    <Compile Include="AboutNull.cs" />
     <Compile Include="AboutStrings.cs" />
     <Compile Include="AboutUsing.cs" />
     <Compile Include="PathToEnlightenment.cs" />

@@ -5,22 +5,21 @@ Imports Xunit
 Public Class AboutLambdas
     Inherits Koan
     <Koan(1)> _
-    Public Sub UsingAnonymousMethods()
+    Public Sub UsingLambdas()
         'The AboutDelegates Koans introduced you to delegates. In all of those koans, 
         'the delegate was assigned to a predefined method. 
-        'Anonymous methods let you define the method in place.
+        'Lambdas let you define the method in place.
         'This Koan produces the same result as AboutDelegates.ChangingTypesWithConverter, but it uses 
-        'an anonymous method instead. As you can see there is no method name, but it is 
-        'prefixed with "delegate"
+        'a lambda instead. As you can see there is no method name.
         Dim numbers = New Integer() {1, 2, 3, 4}
         Dim result = Array.ConvertAll(numbers, Function(x As Integer) x.ToString())
 
         Assert.Equal(FILL_ME_IN, result)
     End Sub
     <Koan(2)> _
-    Public Sub AnonymousMethodsCanAccessOuterVariables()
-        'Anonymous methods can access variable defined in the scope of the method where they are defined.
-        'In C# this is called accessing an Outer Variable. In other languages it is called closure. 
+    Public Sub LambdasCanAccessOuterVariables()
+        'Lambdas can access variable defined in the scope of the method where they are defined.
+        'In VB this is called accessing an Outer Variable. In other languages it is called closure. 
         Dim numbers = New Integer() {4, 5, 6, 7, 8, 9}
         Dim toFind As Integer = 7
         Assert.Equal(FILL_ME_IN, Array.FindIndex(numbers, Function(x As Integer) x = toFind))
@@ -29,7 +28,7 @@ Public Class AboutLambdas
     Public Sub AccessEvenAfterVariableIsOutOfScope()
         Dim criteria As Predicate(Of Integer)
         If True Then
-            'Anonymous methods even have access to the value after the value has gone out of scope
+            'Lambdas even have access to the value after the value has gone out of scope
             Dim toFind As Integer = 7
             criteria = Function(x As Integer) x = toFind
         End If
@@ -38,56 +37,36 @@ Public Class AboutLambdas
         Assert.Equal(FILL_ME_IN, Array.FindIndex(numbers, criteria))
     End Sub
     <Koan(4)> _
-    Public Sub LambdaExpressionsAreShorthand()
+    Public Sub MultiStatementLambdas()
         Dim numbers = New Integer() {1, 2, 3, 4}
-        Dim anonymous = Array.ConvertAll(numbers, Function(x As Integer) x.ToString())
-        'Lambda expressions are really nothing more than a short hand way of writing anonymous methods
-        'The following is the same work done using a Lambda expression. 
-        'The delegate key word is replaced with => on the other side of the parameters
-        '        |                               |
-        '        |                               |-----|
-        '        |----------------------------|        |
-        '                                    \|/      \|/
+        'Lambda expressions can have multiple statements if you put them on separate lines
+        'and end them with 'End Function'.
         Dim lambda = Array.ConvertAll(numbers, Function(x As Integer)
+                                                   x += 1
                                                    Return x.ToString()
-
                                                End Function)
-        Assert.Equal(FILL_ME_IN, anonymous)
-        'The => pair is spoken as "going into". If you were talking about this 
-        'code with a peer, you would say "x going into..."
+        Assert.Equal(FILL_ME_IN, lambda)
     End Sub
     <Koan(5)> _
-    Public Sub TypeCanBeInferred()
-        'Fortunately the above form of a Lambda is the most verbose form. 
-        'Most of the time you can take many of the pieces out. 
-        'The next few Koans will step you through the optional pieces.
+    Public Sub LambdasCanBeSubs()
         Dim numbers = New Integer() {1, 2, 3, 4}
-        Dim anonymous = Array.ConvertAll(numbers, Function(x As Integer) x.ToString())
-        Dim lambda = Array.ConvertAll(numbers, Function(x)
-                                                   ' type is removed from the parameter --^
-                                                   Return x.ToString()
-
-                                               End Function)
-        Assert.Equal(FILL_ME_IN, anonymous)
+        Dim sum = 0
+        ' In places where no return value is needed of the lambda, a Sub can be used
+        ' This can also have multiple statements by using separate lines and ending with 'End Sub'
+        Array.ForEach(numbers, Sub(x As Integer) sum += x)
+        Assert.Equal(FILL_ME_IN, sum)
     End Sub
     <Koan(6)> _
-    Public Sub ParensNotNeededOnSingleParemeterLambdas()
-        Dim numbers = New Integer() {1, 2, 3, 4}
-        Dim anonymous = Array.ConvertAll(numbers, Function(x As Integer) x.ToString())
-        Dim lambda = Array.ConvertAll(numbers, Function(x)
-                                                   '                                     ^-----------------------|
-                                                   'When you have only one parameter, no parenthesis are needed -|
-                                                   Return x.ToString()
+    Public Sub TypeNotNeeded()
+        ' It is not necessary to specify the type of the arguments of a lambda
+        ' This is handy when you want to reuse the lambda with different types
 
-                                               End Function)
-        Assert.Equal(FILL_ME_IN, anonymous)
-    End Sub
-    <Koan(7)> _
-    Public Sub BlockNotNeededOnSingleStatementLambdas()
-        Dim numbers = New Integer() {1, 2, 3, 4}
-        Dim anonymous = Array.ConvertAll(numbers, Function(x As Integer) x.ToString())
-        Dim lambda = Array.ConvertAll(numbers, Function(x) x.ToString())
-        'When you have only one statement, the curly brackets are not needed. What other two things are also missing?
-        Assert.Equal(FILL_ME_IN, anonymous)
+        Dim lambdaToString = Function(x) x.ToString()
+
+        Dim integerStrings = Array.ConvertAll(New Integer() {1, 2, 3, 4}, lambdaToString)
+        Assert.Equal(FILL_ME_IN, integerStrings)
+
+        Dim doubleStrings = Array.ConvertAll(New Double() {1.5, 2.1, 3.14, 4.2}, lambdaToString)
+        Assert.Equal(FILL_ME_IN, doubleStrings)
     End Sub
 End Class

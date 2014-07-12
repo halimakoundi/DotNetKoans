@@ -43,11 +43,12 @@ namespace DotNetKoans.KoanRunner
 				}
 
 				KoanHelpers.IAmThePathToEnlightenment path = Activator.CreateInstance(pathType) as KoanHelpers.IAmThePathToEnlightenment;
-				string[] thePath = path.ThePath;
+				string thePath = path.ThePath;
+                string[] theKoanNames = KoanNames;
 
-				foreach (string koan in thePath)
+                foreach (string koanName in theKoanNames)
 				{
-					Run(koan, koans, wrapper);
+					Run(thePath+"."+koanName, koans, wrapper);
 				}
 
                 Console.WriteLine("{0}", Encouragement());
@@ -59,6 +60,8 @@ namespace DotNetKoans.KoanRunner
 				Console.WriteLine("Karma has killed the runner. Exception was: " + ex.ToString());
 				return -1;
 			}
+            if (!aKoanHasFailed)
+                firstFailingKoan = numberKoansProcessed;
 			Console.WriteLine("Koan progress: {0}/{1}", firstFailingKoan, numberKoansProcessed);
 			Console.WriteLine("*******************************************************************");
 			Console.WriteLine("*******************************************************************");
@@ -125,7 +128,11 @@ namespace DotNetKoans.KoanRunner
             
             Type classToRun = koanAssembly.GetType(className);
 
-            if (classToRun == null) { return "(0/0)"; }
+            if (classToRun == null)
+            {
+                Console.WriteLine("Class {0} not found", className);
+                return "(0/0)";
+            }
 
             object koans = Activator.CreateInstance(classToRun);
 
@@ -197,6 +204,28 @@ namespace DotNetKoans.KoanRunner
                     className, highestKoanNumber, numberOfKoansRunInThisCollection);
             }
 			return string.Format("({0}/{1})", numberOfKoansPassedInThisCollection, numberOfKoansRunInThisCollection);
+        }
+
+        static public string[] KoanNames
+        {
+            get
+            {
+                return new string[] {
+				"AboutAsserts",
+				"AboutNull",
+				"AboutArrays",
+				"AboutStrings",
+                "AboutClassesAndStructs",
+				"AboutInheritance",
+                "AboutProperties",
+				"AboutMethods",
+				"AboutControlStatements",
+				"AboutContainers",
+				"AboutDelegates",
+				"AboutLambdas",
+                "AboutUsing"
+                };
+            }
         }
     }
 }

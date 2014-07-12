@@ -2,16 +2,16 @@ using Xunit;
 
 namespace DotNetKoans.CSharp
 {
-    public class AboutNil : Koan
+    public class AboutNull : Koan
     {
         [Koan(1)]
-        public void NilIsNotAnObject()
+        public void NullIsNotAnObject()
         {
             Assert.True(typeof(object).IsAssignableFrom(null)); //not everything is an object
         }
 
         [Koan(2)]
-        public void YouGetNullPointerErrorsWhenCallingMethodsOnNil()
+        public void YouGetNullPointerErrorsWhenCallingMethodsOnNull()
         {
             //What is the Exception that is thrown when you call a method on a null object?
             //Don't be confused by the code below. It is using Anonymous Delegates which we will

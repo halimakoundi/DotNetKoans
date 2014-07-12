@@ -1,6 +1,6 @@
 Imports Xunit
 
-Public Class AboutNothing
+Public Class AboutNull
     Inherits Koan
     <Koan(1)> _
     Public Sub NilIsNotAnObject()
