@@ -223,7 +223,8 @@ namespace DotNetKoans.KoanRunner
 				"AboutContainers",
 				"AboutDelegates",
 				"AboutLambdas",
-                "AboutUsing"
+                "AboutUsing",
+                "AboutSymbols"
                 };
             }
         }

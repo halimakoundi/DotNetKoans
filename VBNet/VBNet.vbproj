@@ -24,6 +24,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>VBNet.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42030,42032,42036,42104,42108,42109</NoWarn>
+    <DefineConstants>CONST_B=1,CONST_C</DefineConstants>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -72,6 +73,7 @@
     <Compile Include="AboutNull.vb" />
     <Compile Include="AboutProperties.vb" />
     <Compile Include="AboutStrings.vb" />
+    <Compile Include="AboutSymbols.vb" />
     <Compile Include="AboutUsing.vb" />
     <Compile Include="ExtensionMethods.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -100,6 +102,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

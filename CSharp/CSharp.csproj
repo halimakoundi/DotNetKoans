@@ -38,7 +38,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -59,6 +59,7 @@
     <Compile Include="AboutControlStatements.cs" />
     <Compile Include="AboutDelegates.cs" />
     <Compile Include="AboutContainers.cs" />
+    <Compile Include="AboutSymbols.cs" />
     <Compile Include="AboutProperties.cs" />
     <Compile Include="AboutInheritance.cs" />
     <Compile Include="AboutLambdas.cs" />
