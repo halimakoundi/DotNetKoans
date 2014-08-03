@@ -66,7 +66,6 @@
     <Compile Include="AboutContainers.vb" />
     <Compile Include="AboutControlStatements.vb" />
     <Compile Include="AboutDelegates.vb" />
-    <Compile Include="AboutHashes.vb" />
     <Compile Include="AboutInheritance.vb" />
     <Compile Include="AboutLambdas.vb" />
     <Compile Include="AboutMethods.vb" />

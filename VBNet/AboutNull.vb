@@ -19,7 +19,7 @@ Public Class AboutNull
         Try
             obj.ToString()
         Catch ex As Exception
-            Assert.Contains(IIf(TypeOf FILL_ME_IN Is String, CType(FILL_ME_IN, String), Nothing), ex.Message)
+            Assert.Contains("FILL_ME_IN", ex.Message)
         End Try
     End Sub
 

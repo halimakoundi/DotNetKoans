@@ -64,8 +64,8 @@ Public Class AboutContainers
     <Koan(6)> _
     Public Sub ABetterDynamicSizeContainer()
         'ArrayList is a .Net 1.0 container. With .Net 2.0 generics were introduced and with it a new set of collections in
-        'System.Collections.Generic The array like container is List<T>. List<T> (read "list of T") is a generic class. 
-        'The "T" in the definition of List<T> is the type argument. You cannot declare an instace of List<T> without also
+        'System.Collections.Generic The array like container is List(T). List(T) (read "list of T") is a generic class. 
+        'The "T" in the definition of List(T) is the type argument. You cannot declare an instance of List(T) without also
         'supplying a type in place of T.
         Dim list = New List(Of Integer)()
         Assert.Equal(FILL_ME_IN, list.Count)
@@ -73,10 +73,10 @@ Public Class AboutContainers
         list.Add(42)
         Assert.Equal(FILL_ME_IN, list.Count)
 
-        'Now just like int[], you can have a type safe dynamic sized container
-        'list.Add("fourty two"); //<--Unlike ArrayList this is illegal.
+        'Now just like Integer(), you can have a type safe dynamic sized container
+        'list.Add("fourty two") '<--Unlike ArrayList this is illegal.
 
-        'List<T> also solves the boxing/unboxing issues of ArrayList. Unfortunately, you'll have to take Microsoft's word for it
+        'List(T) also solves the boxing/unboxing issues of ArrayList. Unfortunately, you'll have to take Microsoft's word for it
         'as I can't find a way to prove it without some ugly MSIL beyond the scope of these Koans.
     End Sub
     Public Class Widget

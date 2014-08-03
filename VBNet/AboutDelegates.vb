@@ -260,8 +260,8 @@ Public Class AboutDelegates
     End Function
     <Koan(21)> _
     Public Sub SortingWithComparison()
-        'You could make classes sortable by implementing IComparable or IComparer. But the Comparison<> delegate makes it easier
-        '	public delegate int Comparison<T>(T x, T y)
+        'You could make classes sortable by implementing IComparable or IComparer. But the Comparison() delegate makes it easier
+        '	public delegate Integer Comparison(T)(x As T, y As T)
         'All you need is a method which takes two of the same type and returns -1, 0, or 1 depending upon what order they should go in.
         Dim cars = New Car() {New Car("Alfa Romero", "GTV-6", 1986), New Car("BMC", "Mini", 1959)}
         Dim by As Comparison(Of Car) = AddressOf SortByModel
@@ -275,8 +275,8 @@ Public Class AboutDelegates
     End Function
     <Koan(22)> _
     Public Sub ChangingTypesWithConverter()
-        'The Converter<> delegate
-        '	public delegate U Converter<T, U>(T from)
+        'The Converter() delegate
+        '	public delegate U Converter(T, U)(from As T)
         'Can be used to change an object from one type to another
         Dim numbers = New Integer() {1, 2, 3, 4}
         Dim c As Converter(Of Integer, String) = AddressOf Stringify

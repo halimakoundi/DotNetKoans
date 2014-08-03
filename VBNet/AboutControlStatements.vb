@@ -47,7 +47,7 @@ Public Class AboutControlStatements
     <Koan(6)> _
     Public Sub NullableTypes()
         Dim i As Integer = 0
-        'i = null; //You can't do this
+        'i = null 'You can't do this
         Dim nullableInt As Integer? = Nothing 'but you can do this
         Assert.NotNull(FILL_ME_IN)
         Assert.Null(FILL_ME_IN)

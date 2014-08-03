@@ -144,7 +144,7 @@ Public Class AboutMethods
         Assert.Equal(FILL_ME_IN, MethodWithOptionalArguments(1))
 
         ' You cannot omit an optional argument if there are optional arguments after it...
-        ' Assert.Equal(FILL_ME_IN, MethodWithOptionalArguments(1, , 3));
+        ' Assert.Equal(FILL_ME_IN, MethodWithOptionalArguments(1, , 3))
 
         ' ... unless you make it a named argument:
         Assert.Equal(FILL_ME_IN, MethodWithOptionalArguments(1, c:=3))

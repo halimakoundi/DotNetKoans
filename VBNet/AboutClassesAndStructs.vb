@@ -33,7 +33,7 @@ Public Class AboutClassesAndStructs
         Assert.Equal(FILL_ME_IN, obj.GetSquareOfA())
 
         ' But you can only access them if they are public. This would be illegal:
-        'obj.b = 3;
+        'obj.b = 3
 
         ' But methods of the class can access non-public fields:
         Assert.Equal(FILL_ME_IN, obj.GetB())

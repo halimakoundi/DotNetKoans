@@ -20,7 +20,7 @@ Public Class AboutProperties
         Dim obj As New ClassWithGet()
 
         ' This class only has a get for A, so this would be illegal:
-        'obj.A = 5;
+        'obj.A = 5
         Assert.Equal(FILL_ME_IN, obj.A)
     End Sub
 
@@ -38,6 +38,7 @@ Public Class AboutProperties
             End Set
         End Property
     End Class
+
     <Koan(2)> _
     Public Sub ClassesCanHaveGettersAndSetters()
         ' Classes can can have properties with both getters and setters.
@@ -73,6 +74,7 @@ Public Class AboutProperties
         End Property
         Private m_Area As Integer
     End Class
+
     <Koan(3)> _
     Public Sub ClassesCanHavePublicGettersWithPrivateSetters()
         ' It is possible to have a property with a public getter and a private setter,
@@ -82,7 +84,7 @@ Public Class AboutProperties
         Dim obj As New ClassWithPublicGetAndPrivateSet()
 
         ' So this would be illegal:
-        ' obj.Area = 20;
+        ' obj.Area = 20
 
         obj.Side = 5
         Assert.Equal(FILL_ME_IN, obj.Side)

@@ -84,7 +84,7 @@ Public Class AboutInheritance
         'Note that even if we cast the object back to a dog
         'we still get the Chihuahua's behavior. It truly
         '"is-a" Chihuahua
-        Dim dog As Dog = IIf(TypeOf chico Is Dog, CType(chico, Dog), Nothing)
+        Dim dog As Dog = chico
         Assert.Equal(FILL_ME_IN, dog.Bark())
         Dim fido = New Dog("Fido")
         Assert.Equal(FILL_ME_IN, fido.Bark())
@@ -127,7 +127,6 @@ Public Class AboutInheritance
         Inherits Dog
         Public Sub New(ByVal name As String)
             MyBase.New(name)
-
         End Sub
 
         Public Overrides Function Bark() As String
@@ -145,7 +144,6 @@ Public Class AboutInheritance
         Inherits Dog
         Public Sub New(ByVal name As String)
             MyBase.New(name)
-
         End Sub
 
         Public Function Growl() As String

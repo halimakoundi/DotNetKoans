@@ -23,7 +23,7 @@ Public Class AboutArrays
         Assert.Equal(42, Array(CType(FILL_ME_IN, Integer)))
         'This is important because...
         Assert.True(Array.IsFixedSize)
-        '...it means we can't do this: array(4) = 13;
+        '...it means we can't do this: array(4) = 13
         Assert.Throws(GetType(FillMeIn), Sub() array(4) = 13)
         'This is because the array is fixed at length 4.
     End Sub
@@ -34,7 +34,7 @@ Public Class AboutArrays
         Assert.Equal(FILL_ME_IN, Array(0))
         Assert.Equal(FILL_ME_IN, Array(3))
         'This doesn't work:
-        'Assert.Equal(FILL_ME_IN, array(-1));
+        'Assert.Equal(FILL_ME_IN, array(-1))
     End Sub
 
     <Koan(4)> _

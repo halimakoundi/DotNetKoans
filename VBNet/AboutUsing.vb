@@ -42,7 +42,7 @@ Public Class AboutUsing
     Public Sub TheUsedObjectCannotBeReassigned()
         Using obj As New DisposableClass()
             ' This would be illegal:
-            ' obj = new MyClass();
+            'obj = new MyClass()
 
             ' But its members can be changed:
             obj.value = "xyz"
