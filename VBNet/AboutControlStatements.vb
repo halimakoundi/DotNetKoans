@@ -200,4 +200,135 @@ Public Class AboutControlStatements
         End Try
         Assert.Equal(FILL_ME_IN, whoCaughtTheException)
     End Sub
+
+    <Koan(19)> _
+    Public Sub Switch()
+        ' A switch statement allows you to execute one of several blocks of code
+        ' depending on the value of an integer, give after the case keyword.
+
+        Dim a As Integer = 2, b As Integer = 0
+        Select Case a
+            Case 1
+                b = 10
+            Case 2
+                b = 11
+        End Select
+
+        Assert.Equal(FILL_ME_IN, b)
+    End Sub
+
+    <Koan(20)> _
+    Public Sub SwitchWithFallThrough()
+        ' A block can handle multiple values of the variable,
+        ' by separating the values with commas.
+
+        Dim a As Integer = 1, b As Integer = 0
+        Select Case a
+            Case 1, 2
+                b = 11
+            Case 3, 4
+                b = 12
+        End Select
+
+        Assert.Equal(FILL_ME_IN, b)
+    End Sub
+
+    <Koan(21)> _
+    Public Sub SwitchWithARange()
+        ' A block can handle a range of values.
+
+        Dim a As Integer = 4, b As Integer = 0
+        Select Case a
+            Case 1 To 4
+                b = 11
+            Case 5 To 8
+                b = 12
+        End Select
+
+        Assert.Equal(FILL_ME_IN, b)
+    End Sub
+
+    <Koan(22)> _
+    Public Sub SwitchWithComparisons()
+        ' A block can be selected using a comparison.
+        ' If more than one matches, the first is used.
+
+        Dim a As Integer = 4, b As Integer = 0
+        Select Case a
+            Case Is < 4
+                b = 11
+            Case Is < 8
+                b = 12
+        End Select
+
+        Assert.Equal(FILL_ME_IN, b)
+    End Sub
+
+    <Koan(23)> _
+    Public Sub CombinationsOfSelectors()
+        ' You can mix values, ranges and comparisons by separating them with commas.
+
+        Dim a As Integer = 7, b As Integer = 0
+        Select Case a
+            Case 1 To 3, 7, Is > 10
+                b = 11
+            Case 4, Is < 0
+                b = 12
+        End Select
+
+        Assert.Equal(FILL_ME_IN, b)
+    End Sub
+
+    <Koan(24)> _
+    Public Sub SwitchWithExitSelect()
+        ' A block can be selected using a comparison.
+        ' If more than one matches, the first is used.
+
+        Dim cond As Boolean = True
+        Dim a As Integer = 4, b As Integer = 0
+        Select Case a
+            Case 4
+                b = 10
+                If cond Then
+                    Exit Select
+                End If
+                b = 11
+            Case 8
+                b = 12
+        End Select
+
+        Assert.Equal(FILL_ME_IN, b)
+    End Sub
+
+    <Koan(25)> _
+    Public Sub SwitchWithCaseElse()
+        ' If the value is not matched, the code after Case Else
+        ' is executed, if there is one.
+        Dim a As Integer = 3, b As Integer = 0
+        Select Case a
+            Case 1
+                b = 10
+            Case 2
+                b = 11
+            Case Else
+                b = 12
+        End Select
+
+        Assert.Equal(FILL_ME_IN, b)
+    End Sub
+
+    <Koan(26)> _
+    Public Sub SwitchWithStrings()
+        ' Instead of integers you can also use strings.
+        Dim a As String = "a"
+        Dim b As Integer = 0
+        Select Case a
+            Case "a"
+                b = 10
+            Case "b"
+                b = 11
+        End Select
+
+        Assert.Equal(FILL_ME_IN, b)
+    End Sub
 End Class
