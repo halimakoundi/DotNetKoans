@@ -331,4 +331,74 @@ Public Class AboutControlStatements
 
         Assert.Equal(FILL_ME_IN, b)
     End Sub
+
+    Public Class Customer
+        Public Property Name As String
+        Public Property City As String
+
+        Public Property Comments As New List(Of String)
+    End Class
+
+    <Koan(27)> _
+    Public Sub UsingWith()
+        Dim theCustomer As New Customer
+
+        With theCustomer
+            .Name = "Coho Vineyard"
+            .City = "Redmond"
+        End With
+
+        Assert.Equal(FILL_ME_IN, theCustomer.City)
+    End Sub
+
+    <Koan(28)> _
+    Public Sub UsingNestedWith()
+        Dim theCustomer As New Customer
+
+        With theCustomer
+            .Name = "Coho Vineyard"
+            .City = "Redmond"
+            With .Comments
+                .Add("comment1")
+                .Add("comment2")
+            End With
+        End With
+
+        Assert.Equal(FILL_ME_IN, theCustomer.Comments.Count)
+    End Sub
+
+    Structure Point
+        Dim x As Integer
+        Dim y As Integer
+    End Structure
+
+    Function GetThePoint() As Point
+        Dim p As Point
+        p.x = 1
+        p.y = 2
+        Return p
+    End Function
+
+    <Koan(29)> _
+    Public Sub UsingWithOnAStructure()
+        ' You can also use a structure...
+        Dim p As New Point
+
+        With p
+            .x = 3
+            .y = 4
+        End With
+
+        Assert.Equal(FILL_ME_IN, p.x)
+
+        ' but if the structure is an expression more complex than a single variable
+        ' you cannot assign to its fields
+        Dim px As Integer
+        With GetThePoint()
+            '.x = 3 ' This would not work
+            px = .x
+        End With
+
+        Assert.Equal(FILL_ME_IN, px)
+    End Sub
 End Class
