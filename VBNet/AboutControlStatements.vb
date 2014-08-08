@@ -401,4 +401,80 @@ Public Class AboutControlStatements
 
         Assert.Equal(FILL_ME_IN, px)
     End Sub
+
+    ' The Yield keyword makes a function act as an iterator.
+    ' This creates an interesting control flow.
+    ' Every time 'Yield' is encountered, the control goes back
+    ' to the calling function. When the next element is requested,
+    ' control goes back to the function right after the 'Yield' statement.
+    ' All variables have kept their values, because it runs on a separate stack.
+    ' Note that you need to add the keyword Iterator to the function definition.
+
+    Private Iterator Function Fibonacci1(n As Integer) As System.Collections.Generic.IEnumerable(Of Integer)
+        Dim f1 As Integer = 0, f2 As Integer = 1
+        For i As Integer = 0 To n - 1
+            Dim f3 As Integer = f2 + f1
+            f1 = f2
+            f2 = f3
+            Yield f1
+        Next
+    End Function
+
+    <Koan(30)> _
+    Public Sub Yield()
+        Dim fibonacci = New List(Of Integer)()
+        For Each f As Integer In Fibonacci1(5)
+            fibonacci.Add(f)
+        Next
+        Assert.Equal(New List(Of Integer)() From {}, fibonacci)
+    End Sub
+
+    ' Return allows you to stop the iteration
+    Private Iterator Function Fibonacci2(n As Integer) As System.Collections.Generic.IEnumerable(Of Integer)
+        Dim f1 As Integer = 0, f2 As Integer = 1
+        Dim i As Integer = 0
+        While True
+            Dim f3 As Integer = f2 + f1
+            f1 = f2
+            f2 = f3
+            Yield f1
+
+            i += 1
+            If i = n Then
+                Return
+            End If
+        End While
+    End Function
+
+    <Koan(31)> _
+    Public Sub YieldAndReturn()
+        Dim fibonacci = New List(Of Integer)()
+        For Each f As Integer In Fibonacci2(5)
+            fibonacci.Add(f)
+        Next
+        Assert.Equal(New List(Of Integer)() From {}, fibonacci)
+    End Sub
+
+    ' A property can also be an iterator.
+    Public ReadOnly Iterator Property FiveFibonacciNumbers _
+    As System.Collections.Generic.IEnumerable(Of Integer)
+        Get
+            Dim f1 As Integer = 0, f2 As Integer = 1
+            For i As Integer = 0 To 4
+                Dim f3 As Integer = f2 + f1
+                f1 = f2
+                f2 = f3
+                Yield f1
+            Next
+        End Get
+    End Property
+
+    <Koan(32)> _
+    Public Sub YieldInAProperty()
+        Dim fibonacci = New List(Of Integer)()
+        For Each f As Integer In FiveFibonacciNumbers
+            fibonacci.Add(f)
+        Next
+        Assert.Equal(New List(Of Integer)() From {}, fibonacci)
+    End Sub
 End Class

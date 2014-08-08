@@ -341,5 +341,64 @@ namespace DotNetKoans.CSharp
 
             Assert.Equal(FILL_ME_IN, b);
         }
+
+        // The yield keyword makes a function act as an iterator.
+        // This creates an interesting control flow.
+        // Every time 'yield return' is encountered, the control goes back
+        // to the calling function. When the next element is requested,
+        // control goes back to the function right after the 'yield return'.
+        // All variables still have their values, because it runs on a separate stack.
+
+        private static System.Collections.Generic.IEnumerable<int> Fibonacci1(int n)
+        {
+            int f1 = 0, f2 = 1;
+            for (int i = 0; i < n; ++i)
+            {
+                int f3 = f2 + f1;
+                f1 = f2;
+                f2 = f3;
+                yield return f1;
+            }
+        }
+
+        [Koan(22)]
+        public void Yield()
+        {
+            var fibonacci = new List<int>();
+            foreach (int f in Fibonacci1(5))
+            {
+                fibonacci.Add(f);
+            }
+            Assert.Equal(new List<int>() { }, fibonacci);
+        }
+
+        // yield break allows you to stop the iteration
+        private static System.Collections.Generic.IEnumerable<int> Fibonacci2(int n)
+        {
+            int f1 = 0, f2 = 1;
+            int i = 0;
+            while (true)
+            {
+                int f3 = f2 + f1;
+                f1 = f2;
+                f2 = f3;
+                yield return f1;
+
+                ++i;
+                if (i == n)
+                    yield break;
+            }
+        }
+
+        [Koan(23)]
+        public void YieldWithBreak()
+        {
+            var fibonacci = new List<int>();
+            foreach (int f in Fibonacci2(5))
+            {
+                fibonacci.Add(f);
+            }
+            Assert.Equal(new List<int>() { }, fibonacci);
+        }
     }
 }
