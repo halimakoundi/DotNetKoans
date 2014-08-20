@@ -13,7 +13,7 @@
     <AssemblyName>VBNet</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -23,8 +23,9 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>VBNet.xml</DocumentationFile>
-    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42030,42032,42036,42104,42108,42109</NoWarn>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42030,42032,42036,42104,42108,42109,42356</NoWarn>
     <DefineConstants>CONST_B=1,CONST_C</DefineConstants>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -62,6 +63,7 @@
   <ItemGroup>
     <Compile Include="AboutArrays.vb" />
     <Compile Include="AboutAsserts.vb" />
+    <Compile Include="AboutAsynchrony.vb" />
     <Compile Include="AboutClassesAndStructs.vb" />
     <Compile Include="AboutContainers.vb" />
     <Compile Include="AboutControlStatements.vb" />
