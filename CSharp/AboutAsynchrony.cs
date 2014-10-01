@@ -112,9 +112,11 @@ namespace DotNetKoans.CSharp
             // There are many more such methods that do this, whose name by convention
             // end in Async.
 
-            String src = await ReadFile();
+            Task<String> task = ReadFile();
 
             // Here we could do other things.
+
+            String src = await task;
 
             Assert.Equal(FILL_ME_IN, src.Substring(0, 5));
         }
@@ -328,7 +330,7 @@ namespace DotNetKoans.CSharp
             {
                 int n = await task;
             }
-            catch (OperationCanceledException ex)
+            catch (OperationCanceledException)
             {
                 isCancelled = true;
             }
@@ -352,7 +354,7 @@ namespace DotNetKoans.CSharp
             {
                 int n = await task;
             }
-            catch (OperationCanceledException ex)
+            catch (OperationCanceledException)
             {
                 isCancelled = true;
             }
