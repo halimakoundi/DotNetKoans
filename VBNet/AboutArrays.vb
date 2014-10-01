@@ -61,4 +61,11 @@ Public Class AboutArrays
         Assert.Equal(FILL_ME_IN, array.Length)
         Assert.Equal(FILL_ME_IN, array(0))
     End Sub
+
+    <Koan(7)> _
+    Public Sub TwoDimensionalArrays()
+        Dim array(2, 3) As Integer
+        array(2, 3) = 5
+        Assert.Equal(FILL_ME_IN, array(2, 3))
+    End Sub
 End Class
