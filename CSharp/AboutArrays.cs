@@ -8,21 +8,13 @@ namespace DotNetKoans.CSharp
 {
     public class AboutArrays : Koan
     {
-		/*[Koan(1)]
+		[Koan(1)]
         public void CreatingAnArray()
         {
             var array = new int[3];
             Assert.Equal(typeof(FillMeIn), array.GetType());
             Assert.Equal(FILL_ME_IN, array.Length);
         }
-*/
-		[Koan(1)]
-		public void AboutTernaryOperator(){
-			var color = "blank";
-			var rowValue = 20;
-			color = (rowValue > 0 && rowValue < 40) ? "green" : (rowValue > 40 && rowValue < 60 ? "Yellow" :(rowValue > 60 && rowValue < 80 ? "Orange": (rowValue > 80 && rowValue < 100 ? "Red": "Undefined")));
-			Assert.Equal("green",color);
-		}
 
         [Koan(2)]
         public void ArrayLiterals()
