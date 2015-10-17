@@ -1,0 +1,20 @@
+﻿<Properties StartupItem="KoanRunner/KoanRunner.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="KoanRunner/Program.cs">
+    <Files>
+      <File FileName="CSharp/AboutArrays.cs" Line="12" Column="18" />
+      <File FileName="KoanRunner/Program.cs" Line="34" Column="38" />
+    </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State name="__root__">
+          <Node name="CSharp" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

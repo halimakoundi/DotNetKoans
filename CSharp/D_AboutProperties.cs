@@ -18,7 +18,7 @@ namespace DotNetKoans.CSharp
             }
         }
         [Koan(1)]
-        public void ClassesCanHaveGetters()
+        public void A_ClassesCanHaveGetters()
         {
             // Classes can can have properties with just a getter.
             ClassWithGet obj = new ClassWithGet();
@@ -42,7 +42,7 @@ namespace DotNetKoans.CSharp
             }
         }
         [Koan(2)]
-        public void ClassesCanHaveGettersAndSetters()
+        public void B_ClassesCanHaveGettersAndSetters()
         {
             // Classes can can have properties with both getters and setters.
             ClassWithGetSet obj = new ClassWithGetSet();
@@ -65,7 +65,7 @@ namespace DotNetKoans.CSharp
             }
         }
         [Koan(3)]
-        public void ClassesCanHaveDefaultGettersAndSetters()
+        public void C_ClassesCanHaveDefaultGettersAndSetters()
         {
             // Classes can also have properties with default getters and setters,
             // where you don't need to supply a body if they just set and return a field
@@ -103,7 +103,7 @@ namespace DotNetKoans.CSharp
             }
         }
         [Koan(4)]
-        public void ClassesCanHavePublicGettersWithPrivateSetters()
+        public void D_ClassesCanHavePublicGettersWithPrivateSetters()
         {
             // It is possible to have a property with a public getter and a private setter,
             // so a user of the class can get the value but not set it, although methods of
@@ -140,7 +140,7 @@ namespace DotNetKoans.CSharp
         }
 
         [Koan(5)]
-        public void ClassesCanHaveIndexers()
+        public void E_ClassesCanHaveIndexers()
         {
             // An indexer allows a class to act as an array.
             ClassWithIndexer obj = new ClassWithIndexer();

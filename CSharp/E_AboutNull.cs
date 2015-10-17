@@ -5,13 +5,13 @@ namespace DotNetKoans.CSharp
     public class AboutNull : Koan
     {
         [Koan(1)]
-        public void NullIsNotAnObject()
+        public void A_NullIsNotAnObject()
         {
             Assert.True(typeof(object).IsAssignableFrom(null)); //not everything is an object
         }
 
         [Koan(2)]
-        public void YouGetNullPointerErrorsWhenCallingMethodsOnNull()
+        public void B_YouGetNullPointerErrorsWhenCallingMethodsOnNull()
         {
             //What is the Exception that is thrown when you call a method on a null object?
             //Don't be confused by the code below. It is using Anonymous Delegates which we will
@@ -32,7 +32,7 @@ namespace DotNetKoans.CSharp
         }
 
         [Koan(3)]
-        public void CheckingThatAnObjectIsNull()
+        public void C_CheckingThatAnObjectIsNull()
         {
             object obj = null;
             Assert.True(obj == FILL_ME_IN);
@@ -40,14 +40,14 @@ namespace DotNetKoans.CSharp
 
 #pragma warning disable 219
         [Koan(4)]
-        public void ABetterWayToCheckThatAnObjectIsNull()
+        public void D_ABetterWayToCheckThatAnObjectIsNull()
         {
             object obj = null;
             Assert.Null(FILL_ME_IN);
         }
 
         [Koan(5)]
-        public void AWayNotToCheckThatAnObjectIsNull()
+        public void E_AWayNotToCheckThatAnObjectIsNull()
         {
             object obj = null;
             Assert.True(obj.Equals(null));

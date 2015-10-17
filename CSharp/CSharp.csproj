@@ -55,23 +55,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutArrays.cs" />
-    <Compile Include="AboutAsserts.cs" />
-    <Compile Include="AboutAsynchrony.cs" />
-    <Compile Include="AboutClassesAndStructs.cs" />
-    <Compile Include="AboutControlStatements.cs" />
-    <Compile Include="AboutDelegates.cs" />
-    <Compile Include="AboutContainers.cs" />
-    <Compile Include="AboutSymbols.cs" />
-    <Compile Include="AboutProperties.cs" />
-    <Compile Include="AboutInheritance.cs" />
-    <Compile Include="AboutLambdas.cs" />
-    <Compile Include="AboutMethods.cs" />
-    <Compile Include="AboutNull.cs" />
-    <Compile Include="AboutStrings.cs" />
-    <Compile Include="AboutUsing.cs" />
     <Compile Include="PathToEnlightenment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ZAboutLambdas.cs" />
+    <Compile Include="ZAboutDelegates.cs" />
+    <Compile Include="ZAboutUsing.cs" />
+    <Compile Include="zAboutSymbols.cs" />
+    <Compile Include="E_AboutNull.cs" />
+    <Compile Include="D_AboutProperties.cs" />
+    <Compile Include="C_AboutMethods.cs" />
+    <Compile Include="B_AboutClassesAndStructs.cs" />
+    <Compile Include="A_AboutAsserts.cs" />
+    <Compile Include="F_AboutStrings.cs" />
+    <Compile Include="G_AboutArrays.cs" />
+    <Compile Include="H_AboutInheritance.cs" />
+    <Compile Include="I_AboutControlStatements.cs" />
+    <Compile Include="ZAboutAsynchrony.cs" />
+    <Compile Include="J_AboutContainers.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KoanHelpers\KoanHelpers.csproj">

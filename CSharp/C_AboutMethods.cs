@@ -46,7 +46,7 @@ namespace DotNetKoans.CSharp
         //Static methods don't require an instance of the object
         //in order to be called. 
         [Koan(1)]
-        public void CallingStaticMethodsWithoutAnInstance()
+        public void A_CallingStaticMethodsWithoutAnInstance()
         {
             Assert.Equal(FILL_ME_IN, InnerSecret.Key());
         }
@@ -58,7 +58,7 @@ namespace DotNetKoans.CSharp
 
 
         [Koan(2)]
-        public void CallingPublicMethodsOnAnInstance()
+        public void B_CallingPublicMethodsOnAnInstance()
         {
             InnerSecret secret = new InnerSecret();
             Assert.Equal(FILL_ME_IN, secret.Secret());
@@ -69,7 +69,7 @@ namespace DotNetKoans.CSharp
         //InformationLeak of the StateSecret class which returns
         //the value from the protected method SuperSecret
         [Koan(3)]
-        public void CallingProtectedMethodsOnAnInstance()
+        public void C_CallingProtectedMethodsOnAnInstance()
         {
             StateSecret secret = new StateSecret();
             Assert.Equal(FILL_ME_IN, secret.InformationLeak());
@@ -83,7 +83,7 @@ namespace DotNetKoans.CSharp
         //you just about anything, and though it's way out of scope
         //for this...
         [Koan(4)]
-        public void SubvertPrivateMethods()
+        public void D_SubvertPrivateMethods()
         {
             InnerSecret secret = new InnerSecret();
             string superSecretMessage = secret.GetType()
@@ -103,7 +103,7 @@ namespace DotNetKoans.CSharp
         }
 
         [Koan(5)]
-        public void CallingGenericMethods()
+        public void E_CallingGenericMethods()
         {
             Assert.Equal(typeof(FillMeIn), GiveMeBack<int>(1).GetType());
 
@@ -133,7 +133,7 @@ namespace DotNetKoans.CSharp
         }*/
 
         [Koan(6)]
-        public void MethodsCanBeOverloaded()
+        public void F_MethodsCanBeOverloaded()
         {
             // Methods can be overloaded, which means that you can have different methods
             // with the same name but different types of arguments. They even can have a
@@ -152,7 +152,7 @@ namespace DotNetKoans.CSharp
         }
 
         [Koan(7)]
-        public void MethodCallsCanUseNamedParameters()
+        public void G_MethodCallsCanUseNamedParameters()
         {
             // Method calls can have named arguments, by giving the name of the argument and a colon
             // before the argument.
@@ -168,7 +168,7 @@ namespace DotNetKoans.CSharp
         }
 
         [Koan(8)]
-        public void MethodsCanHaveOptionalArguments()
+        public void H_MethodsCanHaveOptionalArguments()
         {
             // Methods can have optional arguments, if they have an = and a default value after the argument.
             // If you don't pass that argument, the default value is used; otherwise the value you pass is used.
@@ -199,7 +199,7 @@ namespace DotNetKoans.CSharp
         }
 
         [Koan(9)]
-        public void PassingClassObjectsByReference()
+        public void I_PassingClassObjectsByReference()
         {
             Example1 obj1 = new Example1();
             Example1 obj2 = obj1;
@@ -233,7 +233,7 @@ namespace DotNetKoans.CSharp
         }
 
         [Koan(10)]
-        public void PassingClassObjectsWithTheOutKeyword()
+        public void J_PassingClassObjectsWithTheOutKeyword()
         {
             Example1 obj1 = new Example1();
             Example1 obj2 = obj1;
@@ -268,7 +268,7 @@ namespace DotNetKoans.CSharp
         }
 
         [Koan(11)]
-        public void PassingStructObjectsByReference()
+        public void K_PassingStructObjectsByReference()
         {
             Example2 obj = new Example2();
             obj.a = 1;
@@ -302,7 +302,7 @@ namespace DotNetKoans.CSharp
         }
 
         [Koan(12)]
-        public void PassingStructObjectsWithTheOutKeyword()
+        public void L_PassingStructObjectsWithTheOutKeyword()
         {
             Example2 obj;
 
@@ -324,7 +324,7 @@ namespace DotNetKoans.CSharp
         }
 
         [Koan(13)]
-        public void MethodsCanHaveAVariableNumberOfParametersInAnArray()
+        public void M_MethodsCanHaveAVariableNumberOfParametersInAnArray()
         {
             // If the last argument of a method is an array preceded by the keyword params,
             // you can pass an arbitrary number of arguments for that argument, which will
@@ -340,20 +340,20 @@ namespace DotNetKoans.CSharp
         //find them
 
         [Koan(14)]
-        public void ExtensionMethodsShowUpInTheCurrentClass()
+        public void N_ExtensionMethodsShowUpInTheCurrentClass()
         {
             // Note that you have to add 'this.' in front of the call for extension methods.
             Assert.Equal(FILL_ME_IN, this.HelloWorld());
         }
 
         [Koan(15)]
-        public void ExtensionMethodsWithParameters()
+        public void O_ExtensionMethodsWithParameters()
         {
             Assert.Equal(FILL_ME_IN, this.SayHello("Cory"));
         }
 
         [Koan(16)]
-        public void ExtensionMethodsWithVariableParameters()
+        public void P_ExtensionMethodsWithVariableParameters()
         {
             Assert.Equal(FILL_ME_IN, this.MethodWithVariableArguments("Cory", "Will", "Corey"));
         }
@@ -363,7 +363,7 @@ namespace DotNetKoans.CSharp
         //we can "extend" the string class like so:
 
         [Koan(17)]
-        public void ExtendingCoreClasses()
+        public void Q_ExtendingCoreClasses()
         {
             Assert.Equal(FILL_ME_IN, "Cory".SayHi());
         }

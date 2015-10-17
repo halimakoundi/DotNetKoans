@@ -9,7 +9,7 @@ namespace DotNetKoans.CSharp
     public class AboutArrays : Koan
     {
 		[Koan(1)]
-        public void CreatingAnArray()
+        public void A_CreatingAnArray()
         {
             var array = new int[3];
             Assert.Equal(typeof(FillMeIn), array.GetType());
@@ -17,7 +17,7 @@ namespace DotNetKoans.CSharp
         }
 
         [Koan(2)]
-        public void ArrayLiterals()
+        public void B_ArrayLiterals()
         {
             // You can create an array and fill it with elements in one go,
             // in that case you don't need to specify the length.
@@ -34,7 +34,7 @@ namespace DotNetKoans.CSharp
         }
 
         [Koan(3)]
-        public void AccessingElements()
+        public void C_AccessingElements()
         {
             int[] array1 = { 42, 50 };
 
@@ -53,7 +53,7 @@ namespace DotNetKoans.CSharp
         }
 
         [Koan(4)]
-        public void AccessingArrayElements()
+        public void D_AccessingArrayElements()
         {
             var array = new[] { "peanut", "butter", "and", "jelly" };
 
@@ -64,7 +64,7 @@ namespace DotNetKoans.CSharp
         }
 
         [Koan(5)]
-        public void SlicingArrays()
+        public void E_SlicingArrays()
         {
             var array = new[] { "peanut", "butter", "and", "jelly" };
 
@@ -73,7 +73,7 @@ namespace DotNetKoans.CSharp
         }
 
         [Koan(6)]
-        public void CreatingATwoDimensionalArray()
+        public void F_CreatingATwoDimensionalArray()
         {
             int[,] array = new int[3,2];
             array[2, 1] = 5;
@@ -81,7 +81,7 @@ namespace DotNetKoans.CSharp
         }
 
         [Koan(7)]
-        public void CreatingATwoDimensionalArrayLiteral()
+        public void G_CreatingATwoDimensionalArrayLiteral()
         {
             int[,] array = new int[3, 2]
             {
@@ -93,7 +93,7 @@ namespace DotNetKoans.CSharp
         }
 
         [Koan(8)]
-        public void CreatingAnArrayOfArrays()
+        public void H_CreatingAnArrayOfArrays()
         {
             // If you need a non-rectangular two dimensional array,
             // you need to create an array of arrays:

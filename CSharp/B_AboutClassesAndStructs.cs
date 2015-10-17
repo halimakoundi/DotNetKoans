@@ -29,7 +29,7 @@ namespace DotNetKoans.CSharp
             }
         }
         [Koan(1)]
-        public void FieldsAndMethods()
+        public void A_FieldsAndMethods()
         {
             // Objects of classes can have fields and methods.
             Example1 obj = new Example1();
@@ -48,14 +48,14 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, obj.GetB());
         }
         [Koan(2)]
-        public void Constructors()
+        public void B_Constructors()
         {
             // Classes can can have constructors which are called when you create an object of the class with new:
             Example1 obj = new Example1();
             Assert.Equal(FILL_ME_IN, obj.a);
         }
         [Koan(3)]
-        public void ConstructorsWithArguments()
+        public void C_ConstructorsWithArguments()
         {
             // Classes can can have constructors with arguments:
             Example1 obj = new Example1(3);
@@ -68,7 +68,7 @@ namespace DotNetKoans.CSharp
         }
         
         [Koan(4)]
-        public void VariablesHoldReferencesToObjectsOfClasses()
+        public void D_VariablesHoldReferencesToObjectsOfClasses()
         {
             // If you create an object of a class and assign it to a variable,
             // the variable has a reference to the object. This means that if
@@ -89,7 +89,7 @@ namespace DotNetKoans.CSharp
         }
         
         [Koan(5)]
-        public void PassingAnObjectOfAClassIsByReference()
+        public void E_PassingAnObjectOfAClassIsByReference()
         {
             // Passing an object of a class to a function is by reference.
             // This means that if the object is at address X in memory, X is
@@ -106,7 +106,7 @@ namespace DotNetKoans.CSharp
             objInFunction.n = 5;
         }
         [Koan(6)]
-        public void ObjectPassedToAFunctionCannotBeReassigned()
+        public void F_ObjectPassedToAFunctionCannotBeReassigned()
         {
             // If a function is passed a reference to an object of a class, and
             // reassigns it to a new object, this change is not seen by the
@@ -126,7 +126,7 @@ namespace DotNetKoans.CSharp
         }
         // A struct is much like a class, it can have fields, methods, properties, etc.
         [Koan(7)]
-        public void StructsAreCopied()
+        public void G_StructsAreCopied()
         {
             // An important difference is that objects of structs are not held
             // by reference. So assigning it to another variable copies the
@@ -146,7 +146,7 @@ namespace DotNetKoans.CSharp
         }
 
         [Koan(8)]
-        public void StructsPassedToFunctionsAreCopied()
+        public void H_StructsPassedToFunctionsAreCopied()
         {
             // When a struct is passed to a function, it is also copied.
             // So if an object of a struct is at address X in memory, and is
