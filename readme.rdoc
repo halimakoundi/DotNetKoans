@@ -1,13 +1,42 @@
 = DotNet Koans
 
-This is a fork of the DotNet Koans that Cory Foy made.
+This is a fork of a project from Mark VanPeteghem that iyself is a fork of the DotNet Koans that Cory Foy made. :)
 
 The DotNet Koans walk you along the path to enlightenment in order to learn .NET. The goal is to learn a .NET language (C#, VB.NET, F#, etc), syntax, structure and some common functions and libraries. 
 
 The DotNet Koans came about because of the most enlightened RubyKoans (http://github.com/edgecase/ruby_koans) and follow the structure of it most closely.
 
+This Koan has been modified to run on Mono platform with NUnit.
+
+Help to install the platform can be found here :
+
+Mac OS X 10.7 (Lion) and later :
+   http://www.mono-project.com/docs/about-mono/supported-platforms/osx/
+Linux :
+   http://www.mono-project.com/docs/about-mono/supported-platforms/linux/
+   http://www.mono-project.com/docs/getting-started/install/linux/
+Windows :
+   http://www.mono-project.com/docs/getting-started/install/windows/
+
+If you have problems building the project you might want to :
+
+Open the solution on Mono Dev
+Right click on the Csharp solution folder
+Go to options : this should open a pop up
+Go Build > General Tab
+On Build engine : un-select the "Use MsBuild build engine" option
+
+Then You might need to add the NUnit test add-in :
+
+On the top menu go to :
+ Tools > Add-in Manager
+Installed tab > Testing > Select NUnit Support and enable
+
 To use these Koans:
-1. open the CSharp or VB solution
-2. press F7 to build the solution and double click the warning that you see
-3. understand the code and its comments, and fix the code to make the assertion succeed
-4. repeat by going back to step 2 until all Koans are done
+1. open the CSharp
+2. press F7 to build the solution 
+3. (on MonoDevelop) Open the test pad : top menu > View > Pads > Unit Tests
+4. select a test,or run all tests 
+5. Check failing tests on the test result panel
+6. understand the code and its comments, and fix the code to make the assertion succeed
+7. repeat by going back to step 4 until all Koans are done
